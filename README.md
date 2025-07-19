@@ -1,7 +1,7 @@
 # README
 
 ```markdown
-<!-- 背景とスタイルを設定 -->
+<!-- 背景とスタイル -->
 <style>
   body {
     margin: 0;
