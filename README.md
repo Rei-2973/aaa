@@ -6,117 +6,129 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>自己紹介ページ</title>
+  <title>れいのプロフィール</title>
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #121212;
-      color: #fff;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    /* コンテナ */
-    .container {
-      position: relative;
-      width: 100%;
-      max-width: 800px;
-      margin: 0 auto;
-      border-radius: 10px;
+    body {
+      font-family: Arial, sans-serif;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #000;
       overflow: hidden;
     }
 
-    /* 背景画像（ズームアニメーション） */
-    .container img {
+    /* 背景画像 */
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
-      display: block;
-      transform: scale(1);
-      animation: zoomIn 15s ease-in-out infinite alternate;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      animation: zoom 20s ease-in-out infinite alternate;
     }
 
-    /* ズームするアニメーション */
-    @keyframes zoomIn {
+    @keyframes zoom {
       0% { transform: scale(1); }
       100% { transform: scale(1.1); }
     }
 
-    /* 文字ボックス（ふわっと表示アニメーション） */
-    .overlay {
-      position: absolute;
-      top: 20%;
-      left: 10%;
-      right: 10%;
+    /* 文字ボックス */
+    .profile-box {
       background-color: rgba(0, 0, 0, 0.6);
-      color: white;
-      padding: 25px;
-      border-radius: 10px;
-      box-sizing: border-box;
-      line-height: 1.6;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 1.5s ease-out forwards;
-      animation-delay: 0.5s;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 700px;
+      width: 90%;
+      animation: fadeIn 1.5s ease-out;
     }
 
-    /* フェードイン＆スライドアップ */
-    @keyframes fadeInUp {
-      0% {
+    @keyframes fadeIn {
+      from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(30px);
       }
-      100% {
+      to {
         opacity: 1;
         transform: translateY(0);
       }
     }
 
-    h2, h3 {
-      margin-top: 0;
+    h2 {
+      margin: 15px 0 8px;
+      font-size: 1.4rem;
+    }
+
+    p, li, a {
+      font-size: 1rem;
+      line-height: 1.6;
     }
 
     a {
       color: #00ccff;
       text-decoration: none;
-      transition: color 0.3s ease;
     }
 
     a:hover {
-      color: #66e0ff;
       text-decoration: underline;
+      color: #66e0ff;
+    }
+
+    ol, ul {
+      margin-left: 20px;
+      margin-bottom: 15px;
+    }
+
+    /* スマホ対応 */
+    @media (max-width: 600px) {
+      h2 {
+        font-size: 1.2rem;
+      }
+      p, li, a {
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- 背景画像 -->
-    <img src="https://raw.githubusercontent.com/Re1-2973/aaa/refs/heads/main/image0.jpg" alt="背景画像">
+  <!-- 背景画像 -->
+  <img class="background" src="https://raw.githubusercontent.com/Rei-2973/aaa/refs/heads/main/image0.jpg" alt="背景画像">
 
-    <!-- 文字を重ねるボックス -->
-    <div class="overlay">
-      <h2>🌙 自己紹介</h2>
-      <p>ぱろー！れいって呼んでください。<br>誕生日は6/25で、MBTIはENFPです。</p>
+  <!-- プロフィールボックス -->
+  <div class="profile-box">
+    <h2>👋 自己紹介</h2>
+    <p>はろー！れいって呼んでください</p>
 
-      <h3>📜 プロフィール</h3>
-      <p>好きなものはゲーム、音楽、運動、料理！</p>
+    <h2>🧑‍💼 プロフィール</h2>
+    <p>好きなもの？はゲーム、音楽、運動 ｜誕生日は6/25で、MBTIはENFPです</p>
 
-      <h3>🎮 お気に入りのゲーム</h3>
-      <ol>
-        <li>Roblox</li>
-        <li>Muse Dash</li>
-        <li>UNDERTALE</li>
-        <li>Mo4</li>
-      </ol>
+    <h2>🎮 お気に入りのゲーム</h2>
+    <ol>
+      <li>Roblox</li>
+      <li>Muse Dash</li>
+      <li>UNDERTALE</li>
+      <li>Mo4</li>
+    </ol>
 
-      <h3>🎨 将来やりたいこと</h3>
-      <p>継続が苦手な自分だけど、音楽やイラストを上手に描けるようになりたいです。</p>
+    <h2>🚀 将来やりたいこと</h2>
+    <p>継続するのが苦手な自分だけど、音楽とかイラストを上手に描ければいいなーっておもってます</p>
 
-      <h3>🔗 その他リンク</h3>
-      <ul>
-        <li><strong>GitHub:</strong> <a href="https://github.com/Re1-2973">こちら</a></li>
-        <li><strong>TikTok:</strong> <a href="https://www.tiktok.com/@tds7352">こちら</a></li>
-        <li><strong>Spotify:</strong> <a href="https://open.spotify.com/user/31bvmul6z53xh5fg7vflkhwz3tpy">こちら</a></li>
-        <li><strong>Roblox:</strong> <a href="https://www.roblox.com/share?code=79d3945060">こちら</a></li>
-      </ul>
-    </div>
+    <h2>🔗 その他リンク</h2>
+    <ul>
+      <li><strong>GitHub:</strong> <a href="https://github.com/Rei-2973">https://github.com/Rei-2973</a></li>
+      <li><strong>TikTok:</strong> <a href="https://www.tiktok.com/@tds7352">@tds7352</a></li>
+      <li><strong>Spotify:</strong> <a href="https://open.spotify.com/user/317bwulsz633xbnjpeyedrbbs73a?si=a9ue8qooSRar0dedjqYxJw">Spotify プロフィール</a></li>
+      <li><strong>Roblox:</strong> <a href="https://www.roblox.com/share?code=79d394580f3e6046b9e76a8156b38e4f&type=Profile&source=ProfileShare&stamp=1752754583723">Roblox プロフィール</a></li>
+    </ul>
   </div>
 </body>
 </html>
